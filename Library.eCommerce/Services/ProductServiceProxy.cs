@@ -11,8 +11,22 @@ namespace Library.eCommerce.Services
     {
         private ProductServiceProxy()
         {
-            
+            Products = new List<Product>();
         }
+
+        private int LastKey
+        {
+            get
+            {
+                if (!Products.Any())
+                {
+                    return 0;
+                }//end of if statement
+
+                return Products.Select (p=>p?.Id ?? 0 ).Max();
+            }//end of get 
+        }//end of last key
+
         private static ProductServiceProxy? instance;//instance on the type
         private static object instanceLock = new object();
         public static ProductServiceProxy Current
@@ -30,9 +44,32 @@ namespace Library.eCommerce.Services
             }//end of the getter
         }//end of current product service proxy
         
-        private List<Product?> list = new List<Product?>();
+      
 
-        public List<Product?> Products => list;
+        public List<Product?> Products { get; private set; }
+    
+        public Product AddOrUpdate(Product product)
+        {
+            if (product.Id == 0)
+            {
+                product.Id = LastKey + 1;
+                Products.Add(product); 
+            }
+            
+            return product;
+        }//end of add
+
+        public Product Delete(int id)
+        {
+            if (id == 0)
+            {
+                return null;
+            }
+            Product? product = Products.FirstOrDefault(p => p.Id == id);//shallow copy
+            Products.Remove(product);
+            return product;
+        }
+        
     }//end of the class
 }//end of namespace
 

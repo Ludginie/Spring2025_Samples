@@ -9,7 +9,6 @@ namespace Spring2025_Samples
     {
         static void Main(string[] args)
         {
-            var lastKey = 1; //for the id update and delete
             Console.WriteLine("Welcome to Amazon!");
             
             Console.WriteLine("C. Create new inventory item");
@@ -19,6 +18,7 @@ namespace Spring2025_Samples
             Console.WriteLine("Q. Quit");
 
             List<Product?> list = ProductServiceProxy.Current.Products;//equal to exactly the list of products in service proxy
+            //above is a shallow copy
 
             char choice;
             do
@@ -29,9 +29,8 @@ namespace Spring2025_Samples
                 {
                     case 'C':
                     case 'c':
-                        list.Add(new Product
+                        ProductServiceProxy.Current.AddOrUpdate(new Product
                         {
-                            Id = lastKey++,//everytime i add object i will update that last key
                             Name = Console.ReadLine()
                         });
                         break;
@@ -46,19 +45,21 @@ namespace Spring2025_Samples
                         Console.WriteLine("Which product would you like to update?");
                         int selection = int.Parse(Console.ReadLine()?? "-1");
                         var selectedProduct = list.FirstOrDefault(p => p.Id == selection);//go thru list and find prod w id same as selection
+                        
                         if (selectedProduct != null)
                         {
                             selectedProduct.Name = Console.ReadLine() ?? "ERROR";//if selection dne
+                            ProductServiceProxy.Current.AddOrUpdate(selectedProduct);
                         }
+
                         break;
                     case 'D':
                     case 'd':
                         //select one of the products
                         //throw it away
-                        Console.WriteLine("Which product would you like to update?");
+                        Console.WriteLine("Which product would you like to Delete?");
                         selection = int.Parse(Console.ReadLine()?? "-1");
-                        selectedProduct = list.FirstOrDefault(p => p.Id == selection);//go thru list and find prod w id same as selection
-                        list.Remove(selectedProduct);
+                        ProductServiceProxy.Current.Delete(selection);
                         break;
                     case 'Q':
                     case 'q':
