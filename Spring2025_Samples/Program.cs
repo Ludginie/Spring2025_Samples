@@ -1,10 +1,7 @@
-﻿//// See https://aka.ms/new-console-template for more information
-//Console.WriteLine("Hello, World!");
-
+﻿using Library.eCommerce.Models;
 using Library.eCommerce.Services;
 using Spring2025_Samples.Models;
 using System;
-using System.Xml.Serialization;
 
 namespace MyApp
 {
@@ -12,7 +9,6 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Welcome to Amazon!");
 
             Console.WriteLine("C. Create new inventory item");
@@ -21,51 +17,57 @@ namespace MyApp
             Console.WriteLine("D. Delete an inventory item");
             Console.WriteLine("Q. Quit");
 
-            List<Product?> list = ProductServiceProxy.Current.Products;
+            List<Item?> list = ProductServiceProxy.Current.Products;
 
             char choice;
             do
             {
                 string? input = Console.ReadLine();
                 choice = input[0];
+
                 switch (choice)
                 {
                     case 'C':
                     case 'c':
-                        ProductServiceProxy.Current.AddOrUpdate(new Product
+                        Console.Write("Enter product name: ");
+                        string name = Console.ReadLine() ?? "Unnamed Product";
+                        ProductServiceProxy.Current.AddOrUpdate(new Item
                         {
-                            Name = Console.ReadLine()
+                            Product = new Spring2025_Samples.Models.Product { Name = name },
+                            Quantity = 0
                         });
                         break;
+
                     case 'R':
                     case 'r':
-
                         list.ForEach(Console.WriteLine);
                         break;
+
                     case 'U':
                     case 'u':
-                        //select one of the products
                         Console.WriteLine("Which product would you like to update?");
                         int selection = int.Parse(Console.ReadLine() ?? "-1");
-                        var selectedProd = list.FirstOrDefault(p => p.Id == selection);
+                        var selectedItem = list.FirstOrDefault(p => p?.Id == selection);
 
-                        if(selectedProd != null)
+                        if (selectedItem != null)
                         {
-                            selectedProd.Name = Console.ReadLine() ?? "ERROR";
-                            ProductServiceProxy.Current.AddOrUpdate(selectedProd);
+                            Console.Write("Enter new product name: ");
+                            selectedItem.Product.Name = Console.ReadLine() ?? "ERROR";
+                            ProductServiceProxy.Current.AddOrUpdate(selectedItem);
                         }
                         break;
+
                     case 'D':
                     case 'd':
-                        //select one of the products
-                        //throw it away
-                        Console.WriteLine("Which product would you like to update?");
+                        Console.WriteLine("Which product would you like to delete?");
                         selection = int.Parse(Console.ReadLine() ?? "-1");
                         ProductServiceProxy.Current.Delete(selection);
                         break;
+
                     case 'Q':
                     case 'q':
                         break;
+
                     default:
                         Console.WriteLine("Error: Unknown Command");
                         break;
@@ -75,6 +77,4 @@ namespace MyApp
             Console.ReadLine();
         }
     }
-
-
 }
