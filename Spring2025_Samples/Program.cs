@@ -33,14 +33,16 @@ namespace MyApp
                         string name = Console.ReadLine() ?? "Unnamed Product";
                         ProductServiceProxy.Current.AddOrUpdate(new Item
                         {
-                            Product = new Spring2025_Samples.Models.Product { Name = name },
+                            Product = new Library.eCommerce.DTO.ProductDTO { Name = name },
                             Quantity = 0
                         });
+
                         break;
 
                     case 'R':
                     case 'r':
-                        list.ForEach(Console.WriteLine);
+
+                        list.ForEach(item => Console.WriteLine(item?.Product?.Name));
                         break;
 
                     case 'U':

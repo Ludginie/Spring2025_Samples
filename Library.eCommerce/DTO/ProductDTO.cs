@@ -28,6 +28,7 @@ namespace Library.eCommerce.DTO
         public ProductDTO()
         {
             Name = string.Empty;
+            Price = 2.00;
         }
 
         public ProductDTO(Product p)

@@ -1,10 +1,21 @@
+using Library.eCommerce.Services;
+using Maui.eCommerce.ViewModels;
 using Microsoft.Maui.Controls;
+using System;
 
-namespace Maui.eCommerce.Views;
-public partial class CheckoutPage : ContentPage
+namespace Maui.eCommerce.Views
 {
-    public CheckoutPage()
+    public partial class CheckoutPage : ContentPage
     {
-        InitializeComponent();
+        private CheckoutViewModel viewModel;
+
+        public CheckoutPage()
+        {
+            InitializeComponent();
+            viewModel = BindingContext as CheckoutViewModel ?? new CheckoutViewModel();
+        }
+
+       
+
     }
 }

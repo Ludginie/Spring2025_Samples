@@ -19,6 +19,8 @@
                 <DataTemplate>
                     <StackLayout Orientation="Horizontal" Spacing="10">
                         <Label Text="{Binding Product.Name}" FontSize="16" />
+                        <Label Text="x" FontSize="16" />
+                        <Label Text="{Binding Quantity}" FontSize="16" />
                         <Label Text="{Binding Product.Price, StringFormat='${0:F2}'}" FontSize="16" />
                     </StackLayout>
                 </DataTemplate>
@@ -28,5 +30,6 @@
         <Label Text="{Binding SubtotalFormatted}" FontSize="18" />
         <Label Text="{Binding TaxFormatted}" FontSize="18" />
         <Label Text="{Binding TotalFormatted}" FontSize="20" FontAttributes="Bold" />
+        
     </StackLayout>
 </ContentPage>

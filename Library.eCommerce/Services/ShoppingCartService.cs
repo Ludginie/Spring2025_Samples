@@ -1,4 +1,6 @@
-﻿using Library.eCommerce.Models;
+﻿using Spring2025_Samples.Models;
+using Library.eCommerce.Models;
+using Library.eCommerce.DTO;
 
 namespace Library.eCommerce.Services
 {
@@ -6,57 +8,63 @@ namespace Library.eCommerce.Services
     {
         private ProductServiceProxy _prodSvc = ProductServiceProxy.Current;
         private List<Item> items;
-        public List<Item> CartItems
+
+        public List<Item> CartItems => items;
+
+        public static ShoppingCartService Current
         {
             get
             {
-                return items;
-            }
-        }
-        public static ShoppingCartService Current {  
-            get
-            {
-                if(instance == null)
+                if (instance == null)
                 {
                     instance = new ShoppingCartService();
                 }
-
                 return instance;
-            } 
+            }
         }
+
         private static ShoppingCartService? instance;
-        private ShoppingCartService() { 
+
+        private ShoppingCartService()
+        {
             items = new List<Item>();
         }
 
         public Item? AddOrUpdate(Item item)
         {
             var existingInvItem = _prodSvc.GetById(item.Id);
-            if(existingInvItem == null || existingInvItem.Quantity == 0) {
+            if (existingInvItem == null || existingInvItem.Quantity == 0)
+            {
                 return null;
             }
 
-            if (existingInvItem != null)
-            {
-                existingInvItem.Quantity--;
-            }
+            existingInvItem.Quantity--;
 
             var existingItem = CartItems.FirstOrDefault(i => i.Id == item.Id);
-            if(existingItem == null)
+            if (existingItem == null)
             {
-                //add
-                var newItem = new Item(item);
-                newItem.Quantity = 1;
+                // Add new item, copying data manually into a ProductDTO
+                var newItem = new Item
+                {
+                    Id = item.Id,
+                    Quantity = 1,
+                    Product = new ProductDTO
+                    {
+                        Id = existingInvItem.Product?.Id ?? 0,
+                        Name = existingInvItem.Product?.Name ?? "Unknown",
+                        Price = existingInvItem.Product?.Price ?? 2.00
+                    }
+                };
                 CartItems.Add(newItem);
-            } else
+            }
+            else
             {
-                //update
                 existingItem.Quantity++;
             }
 
-
             return existingInvItem;
         }
+
 
         public Item? ReturnItem(Item? item)
         {
@@ -69,19 +77,47 @@ namespace Library.eCommerce.Services
             if (itemToReturn != null)
             {
                 itemToReturn.Quantity--;
-                var inventoryItem = _prodSvc.Products.FirstOrDefault(p => p.Id == itemToReturn.Id); ;
-                if(inventoryItem == null)
+                var inventoryItem = _prodSvc.Products.FirstOrDefault(p => p.Id == itemToReturn.Id);
+                if (inventoryItem == null)
                 {
                     _prodSvc.AddOrUpdate(new Item(itemToReturn));
-                } else
+                }
+                else
                 {
                     inventoryItem.Quantity++;
                 }
             }
 
-
             return itemToReturn;
         }
 
+        public string Checkout()
+        {
+            if (CartItems.Count == 0)
+            {
+                return "The cart is empty.";
+            }
+
+            string receipt = "Receipt:\n";
+            double total = 0;
+
+            foreach (var item in CartItems)
+            {
+                double price = item.Product?.Price ?? 2.00;
+                double itemTotal = (item.Quantity ?? 0) * price;
+                receipt += $"{item.Product?.Name} x {item.Quantity} - ${itemTotal:F2}\n";
+                total += itemTotal;
+            }
+
+            double tax = total * 0.07;
+            double grandTotal = total + tax;
+
+            receipt += $"Subtotal: ${total:F2}\n";
+            receipt += $"Tax (7%): ${tax:F2}\n";
+            receipt += $"Total: ${grandTotal:F2}";
+
+            CartItems.Clear();
+            return receipt;
+        }
     }
 }

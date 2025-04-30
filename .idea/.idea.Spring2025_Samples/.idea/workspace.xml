@@ -4,6 +4,7 @@
     <projectFile kind="XamarinAndroid">Maui.eCommerce/Maui.eCommerce.csproj</projectFile>
     <projectFile kind="XamarinIOS">Maui.eCommerce/Maui.eCommerce.csproj</projectFile>
     <projectFile kind="XamarinMacOS">Maui.eCommerce/Maui.eCommerce.csproj</projectFile>
+    <projectFile profileName="Maui.eCommerce (MacCatalyst)">Maui.eCommerce/Maui.eCommerce.csproj</projectFile>
     <projectFile>Spring2025_Samples/Spring2025_Samples.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
@@ -11,17 +12,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5dea156-7d2f-4351-aeac-cba93c1be165" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Spring2025_Samples/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spring2025_Samples/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Spring2025_Samples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spring2025_Samples/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.eCommerce/DTO/ProductDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/DTO/ProductDTO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/AppShell.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/CheckoutViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/CheckoutViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ProductViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ProductViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/CheckoutPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/CheckoutPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/CheckoutPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/CheckoutPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spring2025_Samples/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Spring2025_Samples/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,9 +67,14 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Maui MacCatalyst.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.Spring2025_Samples.executor&quot;: &quot;Run&quot;,
+    &quot;Device#class com.jetbrains.rider.run.multiPlatform.ios.devices.IOSSimulatorKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider#iOS: Maui.eCommerce&quot;: &quot;iPhone 16&quot;,
+    &quot;DeviceKind#com.jetbrains.rider.run.multiPlatform.ios.devices.IOSDevicesProvider&quot;: &quot;Simulator&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;assignment2&quot;,
+    &quot;iOS.Maui.eCommerce.executor&quot;: &quot;Run&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -71,9 +86,9 @@
 }</component>
   <component name="RunManager" selected="iOS.Maui.eCommerce">
     <configuration name="Spring2025_Samples" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Spring2025_Samples/bin/Debug/net8.0/Spring2025_Samples" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Spring2025_Samples/bin/Debug/net8.0" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -83,7 +98,37 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value="net8.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="Maui MacCatalyst" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Maui.eCommerce/Maui.eCommerce.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0-maccatalyst" />
+      <option name="LAUNCH_PROFILE_NAME" value="Maui.eCommerce (MacCatalyst)" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="Maui.eCommerce: Maui.eCommerce (MacCatalyst)" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Maui.eCommerce/Maui.eCommerce.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net8.0-android" />
+      <option name="LAUNCH_PROFILE_NAME" value="Maui.eCommerce (MacCatalyst)" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -114,6 +159,14 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.Maui.eCommerce: Maui.eCommerce (MacCatalyst)" />
+      <item itemvalue=".NET Launch Settings Profile.Maui MacCatalyst" />
+      <item itemvalue=".NET Project.Spring2025_Samples" />
+      <item itemvalue="Android.Maui.eCommerce" />
+      <item itemvalue="iOS.Maui.eCommerce" />
+      <item itemvalue="macOS.Maui.eCommerce" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -128,6 +181,16 @@
       <workItem from="1742404880250" duration="19634000" />
       <workItem from="1743615654343" duration="190000" />
       <workItem from="1743615864851" duration="4052000" />
+      <workItem from="1744395727591" duration="215000" />
+      <workItem from="1744395972430" duration="1763000" />
+      <workItem from="1744398438833" duration="101000" />
+      <workItem from="1744398545807" duration="86000" />
+      <workItem from="1744398636464" duration="1513000" />
+      <workItem from="1744400172690" duration="364000" />
+      <workItem from="1744400549486" duration="621000" />
+      <workItem from="1744402867490" duration="105000" />
+      <workItem from="1744402984465" duration="172000" />
+      <workItem from="1744403159622" duration="10562000" />
     </task>
     <servers />
   </component>

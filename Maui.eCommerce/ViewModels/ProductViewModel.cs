@@ -49,11 +49,18 @@ namespace Maui.eCommerce.ViewModels
         {
             ProductServiceProxy.Current.AddOrUpdate(Model);
         }
-
+        
         public void Undo()
         {
+            if (cachedModel == null)
+            {
+                Console.WriteLine("Nothing to undo.");
+                return;
+            }
+
             ProductServiceProxy.Current.AddOrUpdate(cachedModel);
         }
+
 
         public ProductViewModel() {
             Model = new Item();
