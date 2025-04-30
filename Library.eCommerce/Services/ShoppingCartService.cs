@@ -72,7 +72,6 @@ namespace Library.eCommerce.Services
             {
                 return null;
             }
-
             var itemToReturn = CartItems.FirstOrDefault(c => c.Id == item.Id);
             if (itemToReturn != null)
             {
@@ -89,7 +88,7 @@ namespace Library.eCommerce.Services
             }
 
             return itemToReturn;
-        }
+        }//end of return item
 
         public string Checkout()
         {
@@ -103,7 +102,7 @@ namespace Library.eCommerce.Services
 
             foreach (var item in CartItems)
             {
-                double price = item.Product?.Price ?? 2.00;
+                double price = item.Product?.Price ?? 2.00;//setting each of the products to $2
                 double itemTotal = (item.Quantity ?? 0) * price;
                 receipt += $"{item.Product?.Name} x {item.Quantity} - ${itemTotal:F2}\n";
                 total += itemTotal;
@@ -118,6 +117,6 @@ namespace Library.eCommerce.Services
 
             CartItems.Clear();
             return receipt;
-        }
+        }//for the reciept
     }
 }

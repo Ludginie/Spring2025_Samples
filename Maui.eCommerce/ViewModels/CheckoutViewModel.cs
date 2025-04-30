@@ -31,21 +31,20 @@ public class CheckoutViewModel : INotifyPropertyChanged
         {
             CartItems.Add(item);
         }
-
         OnPropertyChanged(nameof(Subtotal));
         OnPropertyChanged(nameof(Tax));
         OnPropertyChanged(nameof(Total));
         OnPropertyChanged(nameof(SubtotalFormatted));
         OnPropertyChanged(nameof(TaxFormatted));
         OnPropertyChanged(nameof(TotalFormatted));
-    }
+    }//end of refereshcart
 
-    public string CompleteCheckout() // ← renamed from Checkout()
+    public string CompleteCheckout()//renaming it to checkout
     {
         var receipt = ShoppingCartService.Current.Checkout();
-        RefreshCart(); // clear UI cart after checkout
+        RefreshCart();
         return receipt;
-    }
+    }//end of completecheckout
 
     private void OnPropertyChanged([CallerMemberName] string name = "") =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

@@ -12,18 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5dea156-7d2f-4351-aeac-cba93c1be165" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Spring2025_Samples/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spring2025_Samples/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Spring2025_Samples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Spring2025_Samples/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.eCommerce/DTO/ProductDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/DTO/ProductDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Models/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/ProductServiceProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/ProductServiceProxy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library.eCommerce/Services/ShoppingCartService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/CheckoutViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/CheckoutViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ProductViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/ViewModels/ProductViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/CheckoutPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/CheckoutPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/CheckoutPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/CheckoutPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/ShoppingManagementView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spring2025_Samples/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Spring2025_Samples/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Maui.eCommerce/Views/InventoryManagementView.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +186,7 @@
       <workItem from="1744402867490" duration="105000" />
       <workItem from="1744402984465" duration="172000" />
       <workItem from="1744403159622" duration="10562000" />
+      <workItem from="1745860434942" duration="3836000" />
     </task>
     <servers />
   </component>

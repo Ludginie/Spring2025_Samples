@@ -22,9 +22,7 @@ namespace Library.eCommerce.DTO
                 return $"{Id}. {Name}";
             }
         }
-
-
-
+        
         public ProductDTO()
         {
             Name = string.Empty;

@@ -13,8 +13,7 @@ namespace Spring2025_Samples.Models
 
         public string? Name { get; set; }
         public double Price { get; set; }
-
-
+        
         public string? Display
         {
             get

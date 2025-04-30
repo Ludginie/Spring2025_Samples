@@ -17,7 +17,6 @@ namespace Maui.eCommerce.ViewModels
             {
                 return Model?.Product?.Name ?? string.Empty;
             }
-
             set
             {
                 if(Model != null && Model.Product?.Name != value)
@@ -33,7 +32,6 @@ namespace Maui.eCommerce.ViewModels
             {
                 return Model?.Quantity;
             }
-
             set
             {
                 if( Model != null && Model.Quantity != value)
@@ -57,7 +55,6 @@ namespace Maui.eCommerce.ViewModels
                 Console.WriteLine("Nothing to undo.");
                 return;
             }
-
             ProductServiceProxy.Current.AddOrUpdate(cachedModel);
         }
 
@@ -65,7 +62,7 @@ namespace Maui.eCommerce.ViewModels
         public ProductViewModel() {
             Model = new Item();
             cachedModel = null;
-        }
+        }//end 
 
         public ProductViewModel(Item? model)
         {
@@ -74,6 +71,6 @@ namespace Maui.eCommerce.ViewModels
             {
                 cachedModel = new Item(model);
             }
-        }
+        }//end 
     }
 }

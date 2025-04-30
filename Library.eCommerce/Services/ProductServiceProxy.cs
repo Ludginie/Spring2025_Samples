@@ -20,7 +20,6 @@ namespace Library.eCommerce.Services
                 new Item{ Product = new ProductDTO{Id = 3, Name ="Product 3"}, Id=3 , Quantity = 3 }
             };
         }
-
         private int LastKey
         {
             get
@@ -70,10 +69,8 @@ namespace Library.eCommerce.Services
                 Products.Insert(index,new Item(item));
             }
 
-
             return item;
         }
-
         public Item? Delete(int id)
         {
             if(id == 0)
